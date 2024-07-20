@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --gradient-color: linear-gradient(180deg, #402E7A, #4C3BCF);
+
+    --primary-color: #EEEEEE;
+    --secondary-color: #999999;
+
+    --hyperlink-color: #FFD369;
+
+    --darker-color: #402E7A;
+    --dark-color: #4C3BCF;
+    --light-color: #4B70F5;
+    --lighter-color: #9FB4FF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    gap: 10px;
+}
+
+.accordion {
+    background: var(--primary-color);
+    padding: 10px;
+    border-radius: 7.5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px var(--darker-color);
+}
+
+.accordion:hover {
+    filter: brightness(.975);
+}
+
+.accordion:active {
+    filter: brightness(.95);
+}
+
+.accordion-header {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.accordion-header span {
+    /* width: 100%; */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.accordion-body {
+    font-size: 14px;
+    color: var(--secondary-color);
+    display: none;
+    transition: all .2s;
+}
+
+.accordion-body.active {
+    margin: 5px 0;
+    display: block;
+}
+
+.fa-solid {
+    transition: all .2s;
+}
+
+.accordion:has(.active) .fa-solid {
+    transform: rotate(180deg);
+}
